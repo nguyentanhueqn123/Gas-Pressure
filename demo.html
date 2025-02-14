@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Pressure Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #222; color: white; text-align: center; }
+        .container { width: 90%; max-width: 400px; margin: auto; padding: 10px; background-color: #333; border-radius: 10px; }
+        .section { margin: 10px 0; padding: 10px; border: 2px solid white; border-radius: 8px; }
+        .label { font-weight: bold; padding: 5px; }
+        .oxygen { background-color: green; }
+        .nitrogen { background-color: yellow; color: black; }
+        .co2 { background-color: gray; }
+        .mix { background-color: white; color: black; }
+        .sensor-container { display: flex; justify-content: space-around; margin-top: 10px; }
+        .sensor { padding: 10px; border: 2px solid black; border-radius: 5px; width: 80px; text-align: center; font-size: 18px; }
+        .error { background-color: red; color: white; animation: blink 0.5s infinite alternate; }
+        @keyframes blink { from { opacity: 1; } to { opacity: 0.5; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo.png" alt="Logo" width="100%">
+        <div class="section">
+            <div class="label oxygen">OXYGEN</div>
+            <div class="sensor-container">
+                <div id="oxyL" class="sensor">-- PSI</div>
+                <div id="oxyM" class="sensor">-- PSI</div>
+                <div id="oxyR" class="sensor">-- PSI</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="label nitrogen">NITROGEN</div>
+            <div class="sensor-container">
+                <div id="nitroL" class="sensor">-- PSI</div>
+                <div id="nitroM" class="sensor">-- PSI</div>
+                <div id="nitroR" class="sensor">-- PSI</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label co2">CARBON DIOXIDE</div>
+            <div class="sensor-container">
+                <div id="co2L" class="sensor">-- PSI</div>
+                <div id="co2M" class="sensor">-- PSI</div>
+                <div id="co2R" class="sensor">-- PSI</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label mix">MIX</div>
+            <div class="sensor-container">
+                <div id="mixL" class="sensor">-- PSI</div>
+                <div id="mixM" class="sensor">-- PSI</div>
+                <div id="mixR" class="sensor">-- PSI</div>
+            </div>
+        </div>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="demo.js"></script> <!-- Kết nối file JavaScript -->
+</body>
+</html>
